@@ -1,0 +1,47 @@
+{% extends 'index.html' %}{% load static %}{% block content%}
+
+<h1>REQUERIMIENTOS ESPECIALES</h1>
+
+<table class="table table-striped table-hover table-bordered align-middle ">
+    <thead class = "table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">ID requerimientoEspecif</th>
+            <th scope="col">Nro Dormitorios</th>
+            <th scope="col">Nro Baños</th>
+            <th scope="col">Nro Garajes</th>
+            <th scope="col">Nro Salas</th>
+            <th scope="col">Nro Pisos</th>
+            <th scope="col">Nro Cocinas</th>
+            <th scope="col">Animales</th>
+            <th scope="col">Amueblado</th>
+            <th scope="col">Patio</th>
+            <th scope="col">Piscina</th>
+            <th scope="col">Otros requisitos</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if requerimientosEspecif %}
+        {% for requerimientoEspecif in requerimientosEspecif %}
+        <tr>
+            <td>{{ requerimientoEspecif.ID_REQ_ESP }}</td>
+            <td>{{ requerimientoEspecif.ID_REQUERIMIENTO  }}</td>
+            <td>{{ requerimientoEspecif.NRO_DORMITORIOS }}</td>
+            <td>{{ requerimientoEspecif.NRO_BANOS }}</td>
+            <td>{{ requerimientoEspecif.NRO_GARAJES }}</td>
+            <td>{{ requerimientoEspecif.NRO_SALAS }}</td>
+            <td>{{ requerimientoEspecif.NRO_PISOS }}</td>
+            <td>{{ requerimientoEspecif.NRO_COCINAS }}</td>
+            <td>{{ requerimientoEspecif.ANIMALES }}</td>
+            <td>{{ requerimientoEspecif.AMUEBLADO }}</td>
+            <td>{{ requerimientoEspecif.PATIO }}</td>
+            <td>{{ requerimientoEspecif.PISCINA }}</td>
+            <td>{{ requerimientoEspecif.OTROS_REQ }}</td>
+
+        </tr>
+
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'index.html' %}{% load static %}{% block content%}
+
+<h1>REQUERIMIENTOS</h1>
+
+<table class="table table-striped table-hover table-bordered align-middle ">
+    <thead class = "table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Inmueble</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Orden Especial</th>
+            <th scope="col">Fecha de registro</th>
+            <th scope="col">Precio Minimo</th>
+            <th scope="col">Precio Maximmo</th>
+            <th scope="col">Zona</th>
+            <th scope="col">Estado de adquisicion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if requerimientos %}
+        {% for requerimiento in requerimientos %}
+        <tr>
+            <td>{{ requerimiento.ID_REQUERIMIENTO }}</td>
+            <td>{{ requerimiento.ID_INMUEBLE }}</td>
+            <td>{{ requerimiento.ID_CLIENTE }}</td>
+            <td>{{ requerimiento.ID_REQ_ESP }}</td>
+            <td>{{ requerimiento.FECHA_REGISTRO_REQ }}</td>
+            <td>{{ requerimiento.PRECIO_MIN_REQ }}</td>
+            <td>{{ requerimiento.PRECIO_MAX_REQ }}</td>
+            <td>{{ requerimiento.ZONA_REQ }}</td>
+            <td>{{ requerimiento.ESTADO_ADQUISICION }}</td>
+
+        </tr>
+
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'index.html' %}{% load static %}{% block content%}
+
+<h1>Clientes</h1>
+
+<table class="table table-striped table-hover table-bordered align-middle ">
+    <thead class = "table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Direccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if clientes %}
+        {% for cliente in clientes%}
+        <tr>
+            <td>{{ cliente.ID_CLIENTE }}</td>
+            <td>{{ cliente.NOMBRE_CLI }}</td>
+            <td>{{ cliente.APELLIDO_CLI }}</td>
+            <td>{{ cliente.UBICACION_CLI }}</td>
+
+        </tr>
+
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
